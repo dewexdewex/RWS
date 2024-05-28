@@ -7,8 +7,28 @@ The Master board is attached to the bicycle. It takes input from switches for On
 
 The Slave board takes input from On/Off, Reset buttons and a float number from the Master board via P2P wireless connection using ESPNOW protocol. It outputs a control voltage to a mechanical servo, which changes the steering angle of a free wheel on the unti to which the Slave is attached.
 
-Master MAC Address: 40:91:51:1F:25:48
 
-Slave MAC Address: 8C:4B:14:09:AE:CC
+# Board MAC addresses
+
+with:
+
+#include <WiFi.h>
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.mode(WIFI_MODE_APSTA);
+  delay(1000);
+  Serial.print("MAC address: "); Serial.println(WiFi.macAddress());
+}
+
+void loop() {}
+
+Master (M) MAC Address: 40:91:51:1F:25:48
+
+Slave (S) MAC Address: 8C:4B:14:09:AE:CC
+
+Older board A with headers MAC Address: 30:AE:A4:F2:C1:8C
+
+Older board B with headers MAC Address: 
 
 I used ChatGPT to generate some code examples. The public URL for the chat is: https://chatgpt.com/share/eae55703-89e8-4bb3-85e4-c148a3af827c
