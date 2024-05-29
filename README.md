@@ -32,3 +32,12 @@ Older board (A) (ESP32 FEATHER) with headers MAC Address: 30:AE:A4:F2:C1:8C
 Older board (B) (ESP32 FM DEVKIT) with headers MAC Address: 30:AE:A4:D3:2D:34
 
 I used ChatGPT to generate some code examples. The public URL for the chat is: https://chatgpt.com/share/eae55703-89e8-4bb3-85e4-c148a3af827c
+
+#29 May
+
+I spent all day getting a combination of Board managers to give me a Sketch which includes the ESP32Servo library to compile:
+
+These were: 
+ArduinoESP32 Boards v 2.0.13
+esp32 v2.0.14
+
