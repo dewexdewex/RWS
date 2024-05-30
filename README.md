@@ -41,3 +41,9 @@ These were:
 ArduinoESP32 Boards v 2.0.13
 esp32 v2.0.14
 
+# Print elephant's foot issue 
+For Cura, the settings are
+Initial Line Hight - make this about 10% smaller than the Line Hight you are using. For example, if you are printing at .2, set the Initial Line Hight to .18
+
+The second is:
+Initial Layer Line Width - Make this 110%
