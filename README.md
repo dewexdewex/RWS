@@ -40,4 +40,7 @@ These were:
 ArduinoESP32 Boards v 2.0.13
 esp32 v2.0.14
 
+# ESP Board failures
+
+I am destrying ESP boards by connecting them to the servo and the 7.4v battery. I believe I need some form of isolation using a decoupling capacitor to prevent this from happening further.
 
