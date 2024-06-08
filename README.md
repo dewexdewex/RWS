@@ -48,3 +48,6 @@ esp32 v2.0.14
 
 I am destrying ESP boards by connecting them to the servo and the 7.4v battery. I believe I need some form of isolation using a decoupling capacitor to prevent this from happening further.
 
+# New cheap board issues
+
+Every new upload requires the upload speed to be dropped to the lowest possible, or upload will break on these new cheapo boards.
