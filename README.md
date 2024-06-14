@@ -30,7 +30,8 @@ Older board (A) (ESP32 FEATHER) with headers MAC Address: 30:AE:A4:F2:C1:8C
 
 Older board (B) (ESP32 FM DEVKIT) with headers MAC Address: 30:AE:A4:D3:2D:34 >>>>> This Board is DEAD
 
-N1: (ESP32 Dev Module) with headers MAC Address: 08:D1:F9:9A:77:18 This board needs the upload speed to be low.
+N1: (ESP32 Dev Module) with headers MAC Address: 08:D1:F9:9A:77:18 This board needs the upload speed to be low. Connecting with driver /dev/cu.wchusbserial56BA0198571 Serial Port (USB)
+
 
 N2: (ESP32 Dev Module) with headers MAC Address: 08:D1:F9:D9:4A:D4 This board needs the upload speed to be low.
 
@@ -51,3 +52,5 @@ I am destrying ESP boards by connecting them to the servo and the 7.4v battery. 
 # New cheap board issues
 
 Every new upload requires the upload speed to be dropped to the lowest possible, or upload will break on these new cheapo boards.
+
+I had issues connecting with the Silicon Labs USB drivers on the Catapult Macbook, so installed the CH34x drivers and these worked.
