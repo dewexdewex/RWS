@@ -42,8 +42,12 @@ I used ChatGPT to generate some code examples. The public URL for the chat is: h
 I spent all day getting a combination of Board managers to give me a Sketch which includes the ESP32Servo library to compile:
 
 These were: 
+
 ArduinoESP32 Boards v 2.0.13
+
 esp32 v2.0.14
+
+On the Catapult Macbook, I had compilation issues with the latest version of the ESP32Servo lirary latest version, so I installed v1.1.0 and this version works with the versions of ArduinoESP32 and esp32 quoted above.
 
 # ESP Board failures
 
