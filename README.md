@@ -64,15 +64,20 @@ Output here: https://chatgpt.com/share/11db7cfa-bb93-4bfa-aa79-9afaa62ad0d6
 
 The primary objective is to build a rear wheel steered trailer system for a bicycle. The rear wheel steering is done remotely and wirelessly using ESP32 boards in a master slave configuration with ESPNOW. The system automatically measures steering angle from the bicycle and sends this to the servo on the rear wheel steer unit to alter its steering angle to make negotiation of corners more smoothe. 
 
-Hardware:
+# Hardware:
 ESP Master board;
+
 ESP Slave board;
+
 Hall Effect Sensor for measurement of bicycle steering angle;
+
 Hall Effect Sensor for measurement of trailer wheel steering angle;
+
 Servo for controlling the angular position of the automatically steered trailer wheel;
+
 Smartphone for displaying data served from a web server running on the ESP master board.
 
-ESP Master board operation:
+# ESP Master board operation:
 
 Has a momentary switch connected to a GPIO pin to invoke the Reset Wizard sequence.
 
@@ -91,13 +96,13 @@ The second web page, the Reset Wizard, displays the instructional steps for the 
 
 The reset Wizard is also used as the Startup Wizard, when the system is fully powered up.
 
-ESP Slave board operation:
+# ESP Slave board operation:
 
-Receives output of the linear analogue voltage from the Hall Effect Sensor, from the ESP Master board, which represents the bicycle steering angle, and converts this angle value to a PWM signal, suitable for the steering Servo, which then causes the steering angle position of the rear steering wheel to be the opposite match to the current bicycle steering angle position.
+Receives as input, output of the linear analogue voltage from the Hall Effect Sensor, from the ESP Master board, which represents the bicycle steering angle, and converts this angle value to a PWM signal, suitable for the steering Servo, which then causes the Servo to change the steering angle position of the rear steering wheel to be the opposite match to the current bicycle steering angle position.
 
-Receives input from a second Hall Effect sensor as a linear analogue voltage, which represents the current steering angle of the steered trailer wheel. Simultaneouls sends this as a value of steering angle to compare with the current bicycle steering angle, for error correction.
+Receives input from a second Hall Effect sensor as a linear analogue voltage, which represents the current steering angle of the steered trailer wheel. Simultaneously sends this as a value of steering angle to compare with the current bicycle steering angle, for error correction.
 
-Sends battery status and power status back to the ESP Master board periodically and automatically.
+Sends battery charge status back to the ESP Master board periodically and automatically for display on the Running view on the smartphone system web page.
 
 
 
