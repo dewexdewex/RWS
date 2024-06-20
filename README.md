@@ -58,3 +58,47 @@ I am destrying ESP boards by connecting them to the servo and the 7.4v battery. 
 Every new upload requires the upload speed to be dropped to the lowest possible, or upload will break on these new cheapo boards.
 
 I had issues connecting with the Silicon Labs USB drivers on the Catapult Macbook, so installed the CH34x drivers and these worked.
+
+# Requirements for ChatGPT
+Output here: https://chatgpt.com/share/11db7cfa-bb93-4bfa-aa79-9afaa62ad0d6
+
+The primary objective is to build a rear wheel steered trailer system for a bicycle. The rear wheel steering is done remotely and wirelessly using ESP32 boards in a master slave configuration with ESPNOW. The system automatically measures steering angle from the bicycle and sends this to the servo on the rear wheel steer unit to alter its steering angle to make negotiation of corners more smoothe. 
+
+Hardware:
+ESP Master board;
+ESP Slave board;
+Hall Effect Sensor for measurement of bicycle steering angle;
+Hall Effect Sensor for measurement of trailer wheel steering angle;
+Servo for controlling the angular position of the automatically steered trailer wheel;
+Smartphone for displaying data served from a web server running on the ESP master board.
+
+ESP Master board operation:
+
+Has a momentary switch connected to a GPIO pin to invoke the Reset Wizard sequence.
+
+Periodically automatically receives input of a linear analogue voltage from the Hall Effect Sensor for measurement of bicycle steering angle;
+
+Sends output of the linear analogue voltage from the Hall Effect Sensor for measurement of bicycle steering angle, using ESPNOW, to the ESP Slave board;
+
+Receives output of the linear analogue voltage from the Hall Effect Sensor for measurement of trailer wheel steering angle, using ESPNOW, from the ESP Slave board;
+Uses the difference bewteen the two steering positions in a PID type closed loop control system to help correct errors between the required and actual values of the input bicycle steering angleand the output trailer wheel steering angle;
+
+Is configured as an accesspoint and serves one of two web pages for display on a nearby smart phone connected to the access point. 
+
+The main web page, called the Running View, displays: The on/off/reset status of the system; The charge level of the LiPo batteries on the ESP Master and the ESP Slave board; Numerical values shown as bars, which represent the bicycle steering angle and the trailer wheel steering angle, so that they are adjacent for comparison; Sliders with a range of values for parameters of the PID type closed loop control system; A button to send any changed values for parameters of the PID type closed loop control systemback to the ESP Master board; a button labeled Reset, which causes the second web page, the Reset Wizard, to be displayed. The web page should produ ce an adible alert if either of the LiPo batteries falls below 80% charge.
+
+The second web page, the Reset Wizard, displays the instructional steps for the system reset sequence as a multistep wizard. It is invoked when the user either presses the momentary switch connected to the ESP Master board, or taps a button on the web pages. The steps are: "Checking batteries"; "Set steering of bicycle to central position and click here when this is complete". 
+
+The reset Wizard is also used as the Startup Wizard, when the system is fully powered up.
+
+ESP Slave board operation:
+
+Receives output of the linear analogue voltage from the Hall Effect Sensor, from the ESP Master board, which represents the bicycle steering angle, and converts this angle value to a PWM signal, suitable for the steering Servo, which then causes the steering angle position of the rear steering wheel to be the opposite match to the current bicycle steering angle position.
+
+Receives input from a second Hall Effect sensor as a linear analogue voltage, which represents the current steering angle of the steered trailer wheel. Simultaneouls sends this as a value of steering angle to compare with the current bicycle steering angle, for error correction.
+
+Sends battery status and power status back to the ESP Master board periodically and automatically.
+
+
+
+
