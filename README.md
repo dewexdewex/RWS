@@ -61,6 +61,7 @@ I had issues connecting with the Silicon Labs USB drivers on the Catapult Macboo
 
 # Requirements for ChatGPT
 Output here: https://chatgpt.com/share/11db7cfa-bb93-4bfa-aa79-9afaa62ad0d6
+Google Doc of output here: https://docs.google.com/document/d/16qyunxlqKm2vZFVplKEgx51QCNpESMkD5VV23nMPT_4/edit?usp=sharing
 
 The primary objective is to build a rear wheel steered trailer system for a bicycle. The rear wheel steering is done remotely and wirelessly using ESP32 boards in a master slave configuration with ESPNOW. The system automatically measures steering angle from the bicycle and sends this to the servo on the rear wheel steer unit to alter its steering angle to make negotiation of corners more smoothe. 
 
